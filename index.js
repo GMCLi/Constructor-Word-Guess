@@ -17,7 +17,7 @@ console.log(Word.Word.Updating);
 //opening title that initializes the game
 function title() {
     wordarray = [];
-    console.log("WELCOME TITLE DO BETTER!!!!!!!!!!!!!!!!!!!!!!!")
+    console.log("Word Guess Game!")
     console.log("..............................................")
     initialize();
 }
@@ -30,7 +30,7 @@ function initialize() {//
     //if the wordarray is less the the full number of countries, choose one
     if (wordarray.length < countries.length) {
         pickedword = Choose();//CONFIRMED OPERATIONAL
-        console.log("pickedword: " + pickedword);//TESTING
+        // console.log("pickedword: " + pickedword);//TESTING
     }
     //otherwise the player wins
     else {
@@ -71,15 +71,18 @@ function makeguess() {
         }
     ])
         .then(data => {
-            // words.letters.forEach(letter => {//for each letter pressed
+            !words.stagedword.includes(data.guessedletter.toLowerCase()) && guesses--;
+            
+            words.letters.forEach(letter => {//for each letter pressed
             //     var temp = letter.guesscheck(data.guessedletter.toLowerCase());
             //     console.log(temp);
-            //     check.push(letter.Character());
+            letter.guesscheck(data.guessedletter.toLowerCase());
+                check.push(letter.Character());
             //         if (pickedword.split("").includes(temp)) {
             //             console.log(temp);//does not come up
             //         }
-            // });
-            var torf = words.Guessing();
+            });
+            // var torf = words.Guessing();
             //if guesses are more than zero, make a guess
             if (guesses > 0 && check.indexOf("_") !== -1) {
                 
