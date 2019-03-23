@@ -1,6 +1,6 @@
 # Constructor-Word-Guess
 
-**Before use, install packages *npm install***
+**Before use, install packages *npm install* and run node index.js**
 
 This project was to create an app that can be brought up on the terminal in order to play a word guess game.
 
